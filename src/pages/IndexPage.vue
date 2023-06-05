@@ -1,7 +1,7 @@
 <template>
   <main class="view">
-    <ControlPanel />
-    <TheScene />
+    <ControlPanel class="view__panel" />
+    <TheScene class="view__scene" />
   </main>
 </template>
 
@@ -13,5 +13,16 @@ import ControlPanel from 'components/ControlPanel.vue';
 <style lang="scss" scoped>
 .view {
   display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  &__panel {
+    height: auto;
+  }
+
+  &__scene {
+    height: auto;
+    width: 100%;
+  }
 }
 </style>

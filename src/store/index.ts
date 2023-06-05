@@ -6,7 +6,7 @@ import {
   Store as VuexStore,
   useStore as vuexUseStore,
 } from 'vuex';
-import { models, ModelsStateInterface } from 'src/store/modules';
+import { models, ModelsStateInterface } from 'src/store/modules/models';
 
 export interface StateInterface {
   models: ModelsStateInterface;
@@ -28,15 +28,13 @@ declare module 'vuex' {
 }
 
 export default store(function () {
-  const Store = createStore<StateInterface>({
+  return createStore<StateInterface>({
     modules: {
       models,
     },
 
     strict: !!process.env.DEBUGGING,
   });
-
-  return Store;
 });
 
 export function useStore() {
